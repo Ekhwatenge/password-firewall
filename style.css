@@ -1,0 +1,179 @@
+// supported by babel styling
+// Font
+
+@font-face
+  src: url(https://assets.codepen.io/4291733/SemplicitaPro-Medium.woff2)
+  font-family: SemplicitaPro
+
+$font-m: 16px
+$font-s: 14px
+
+// Motif colors
+
+$motif-base: #ff79e6
+$motif-low: #ffa6f7
+$motif-dark: #892276
+$motif-shadow: #ffe1f7
+
+// Common colors
+
+$grey-high: #bdbdbd
+$grey-base: #dbdbdb
+$grey-low: #efefef
+
+// SVG
+
+$svg-max-width: 180px
+
+// Input
+
+$input-height: 48px
+$input-width: 180px
+$input-radius: 30px
+$input-border: 1px solid $grey-base
+$input-shadow: 0 3px 3px rgba(0, 0, 0, 0.05)
+
+// Spacing (margins && paddings)
+
+$space-xl: 36px
+$space-l: 18px
+$space-m: 12px
+$space-s: 6px
+
+// Responsive breakpoints
+
+$res-laptop-h: 720px
+
+// Styling
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  user-select: none
+
+#app
+  height: 100vh
+  width: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  background: $grey-low
+  
+  .Main
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    transform: scale(1.6) translateY(-10%)
+    
+  form
+    position: relative
+    top: -$space-l
+    
+  .field
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    height: $input-height
+    width: 100%
+
+    label, i
+      display: flex
+      align-items: center
+      height: 100%
+      position: absolute
+      pointer-events: none
+
+    i
+      left: 0
+      color: $grey-high
+      padding: $space-s
+      padding-left: $space-l
+      transform-origin: center
+      cursor: pointer
+
+    label
+      left: $space-xl * 1.2
+      font-size: $font-s
+      font-family: SemplicitaPro
+      color: $grey-high
+
+    input
+      width: $input-width
+      height: 100%
+      padding-left: $space-xl * 1.2
+      padding-right: $space-m
+      font-size: $font-m
+      border-radius: $input-radius
+      border: $input-border
+      font-family: SemplicitaPro
+      color: $motif-base
+      caret-color: $grey-base
+      outline: none
+      box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.05)
+    
+  svg
+    position: relative
+    left: $space-s
+    width: 100%
+    max-width: $svg-max-width
+    pointer-events: none
+
+    .shield
+      .st0
+        fill: $motif-shadow!important
+        
+      .st1
+        fill: white
+        
+      .st2
+        stroke: $motif-shadow
+        stroke-width: 1
+        stroke-miterlimit: 10
+        
+    .crown
+      transform: scale(.8)
+      transform-origin: 50% 40%
+      
+    .wind-left
+      transform: scale(.6)
+      transform-origin: 20% 85%
+      
+    .wind-right
+      transform: scale(.6)
+      transform-origin: 80% 85%
+      
+    .st0
+      fill: white
+      stroke: $motif-dark
+      stroke-width: 1
+      stroke-miterlimit: 10
+
+    .st1
+      fill: $motif-shadow
+
+    .st2
+      fill: $motif-low
+
+    .st3
+      fill: $motif-low
+      stroke: $motif-dark
+      stroke-width: 1
+      stroke-miterlimit: 10
+
+    .st4
+      fill: $motif-base
+
+    .st5
+      fill: none
+      stroke: $motif-dark
+      stroke-width: 1
+      stroke-linecap: round
+      stroke-linejoin: round
+      stroke-miterlimit: 10
+      
+@media (max-height: $res-laptop-h) 
+  #app .Main
+    transform: scale(1.2) translateY(-10%)
